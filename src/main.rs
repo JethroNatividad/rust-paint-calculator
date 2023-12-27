@@ -47,6 +47,8 @@ fn main() {
     let width: f64 = width.trim().parse().expect("Please enter a valid number");
 
     let ceiling_sqft: f64 = length * width;
-    let gallons: i64 = calculate_gallons(ceiling_sqft);
+    let n_gallons: i64 = calculate_gallons(ceiling_sqft);
+
+    println!("You will need to purchase {} {} of paint to cover {} square feet.", n_gallons, if n_gallons > 1 { "gallons" } else { "gallon" }, ceiling_sqft)
 
 }

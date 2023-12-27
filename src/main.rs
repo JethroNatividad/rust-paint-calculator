@@ -18,6 +18,18 @@ fn calculate_gallons(length: f64, width: f64) -> i64 {
     (ceiling_sqft / GALLON_SQFT).ceil() as i64
 }
 
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_calculate_gallons(){
+        assert_eq!(calculate_gallons(35.0, 10.0), 1);
+        assert_eq!(calculate_gallons(14.0, 6.0), 1);
+        assert_eq!(calculate_gallons(35.0, 11.0), 2);
+        assert_eq!(calculate_gallons(52.0, 63.0), 10);
+    }
+}
 
 
 fn main() {

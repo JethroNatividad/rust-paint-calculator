@@ -12,6 +12,13 @@
 // Process: ceiling sqft = lxw, gallons = round_up(ceiling sqft / gallon sqft).
 // Output: You will need to purchase {n} gallon/s of paint to cover {ceiling sqft} square feet.
 
+fn calculate_gallons(length: f64, width: f64) -> i64 {
+    const GALLON_SQFT: f64 = 350.0;
+    let ceiling_sqft: f64 = length * width;
+    (ceiling_sqft / GALLON_SQFT).ceil() as i64
+}
+
+
 
 fn main() {
     println!("Hello, world!");

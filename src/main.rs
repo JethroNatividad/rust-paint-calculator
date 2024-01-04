@@ -50,8 +50,8 @@ fn get_input<T: std::str::FromStr>(prompt: &str) -> T {
 
 fn main() {
 
-    let length: f64 = get_input("What is the length of the room in feet? ")
-    let width: f64 = get_input("What is the width of the room in feet? ")
+    let length: f64 = get_input("What is the length of the room in feet? ");
+    let width: f64 = get_input("What is the width of the room in feet? ");
 
     let ceiling_sqft: f64 = length * width;
     let n_gallons: i64 = calculate_gallons(ceiling_sqft);

@@ -49,17 +49,9 @@ fn get_input<T: std::str::FromStr>(prompt: &str) -> T {
 }
 
 fn main() {
-    print!("What is the length of the room in feet? ");
-    let mut length = String::new();
-    io::stdout().flush().unwrap();
-    io::stdin().read_line(&mut length).expect("Failed to read input");
-    let length: f64 = length.trim().parse().expect("Please enter a valid number");
 
-    print!("What is the width of the room in feet? ");
-    let mut width = String::new();
-    io::stdout().flush().unwrap();
-    io::stdin().read_line(&mut width).expect("Failed to read input");
-    let width: f64 = width.trim().parse().expect("Please enter a valid number");
+    let length: f64 = get_input("What is the length of the room in feet? ")
+    let width: f64 = get_input("What is the width of the room in feet? ")
 
     let ceiling_sqft: f64 = length * width;
     let n_gallons: i64 = calculate_gallons(ceiling_sqft);
